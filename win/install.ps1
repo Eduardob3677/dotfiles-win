@@ -16,11 +16,11 @@ function Test-MinimumWindowsVersion {
 	[CmdletBinding()]
 	param(
 		[Parameter(Mandatory = $true)]
-		# The minimum required Windows build number (e.g., 26100).
+		# The minimum required Windows build number (e.g., 26200).
 		[int]$MinimumBuild,
 
 		[Parameter(Mandatory = $true)]
-		# The required Windows DisplayVersion string in NNHN format (e.g., "24H2").
+		# The required Windows DisplayVersion string in NNHN format (e.g., "25H2").
 		[string]$RequiredDisplayVersionString
 	)
 
@@ -542,15 +542,15 @@ function Invoke-GitSetupInWsl {
 # ===== Main Script Execution =====
 
 # must be edited by the worker to use the same script as requested by the user
-$scriptOrigin = ''
+$scriptOrigin = 'https://raw.githubusercontent.com/Eduardob3677/dotfiles-win/main'
 # must be edited by the worker to use the correct GitHub repository
-$repoName = ''
+$repoName = 'Eduardob3677/dotfiles-win'
 # might be edited by the worker to use a specific ref
 $gitRef = ''
 $wslDistribution = 'Ubuntu'
 $wslUsername = $env:USERNAME
 
-Test-MinimumWindowsVersion -MinimumBuild 26100 -RequiredDisplayVersionString '24H2'
+Test-MinimumWindowsVersion -MinimumBuild 26200 -RequiredDisplayVersionString '25H2'
 
 Invoke-ElevatedScript -ScriptOrigin $scriptOrigin -GitRef $gitRef
 

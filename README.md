@@ -29,7 +29,7 @@ Since I use WSL2 as my main development environment, I only install GUI applicat
 3. In Windows Terminal (PowerShell, Windows PowerShell, or Command Prompt), run the following command.
 
 ```powershell
-powershell -c "irm dot.risunosu.com/win | iex"
+powershell -c "irm https://raw.githubusercontent.com/Eduardob3677/dotfiles-win/main/win/install.ps1 | iex"
 ```
 
 ### 🐧 WSL2
@@ -39,7 +39,7 @@ The Windows installer script will install dotfiles in WSL2, so you don't need to
 However, if you want to install dotfiles to WSL2 only—such as when you reset WSL2—you can run the following command in bash:
 
 ```bash
-bash -i <(curl -fsSL https://dot.risunosu.com/wsl)
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Eduardob3677/dotfiles-win/main/wsl/install.sh)"
 ```
 
 > \[!IMPORTANT]
