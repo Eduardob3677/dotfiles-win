@@ -7,7 +7,7 @@ test("redirect / to repository readme", async () => {
 		redirect: "manual",
 	});
 	expect(response.headers.get("location")).toBe(
-		"https://github.com/risu729/dotfiles#readme",
+		"https://github.com/Eduardob3677/dotfiles-win#readme",
 	);
 });
 
@@ -44,7 +44,7 @@ describe("return the installer script with the specified repo name set", () => {
 		async (path) => {
 			const response = await SELF.fetch(`https://dot.risunosu.com${path}`);
 			expect(await response.text()).toMatch(
-				/^.?repo(_n|N)ame *= *["']risu729\/dotfiles["']/gm,
+				/^.?repo(_n|N)ame *= *["']Eduardob3677\/dotfiles-win["']/gm,
 			);
 		},
 	);
@@ -131,7 +131,7 @@ describe("installer script must contain the source URL", () => {
 		const sourceUrl = [...script.matchAll(/# source: (?<url>.+)/g)].at(0)
 			?.groups?.["url"];
 		expect(sourceUrl).toBe(
-			`https://raw.githubusercontent.com/risu729/dotfiles/${import.meta.env.DEFAULT_BRANCH}${path}/install.${path === "/win" ? "ps1" : "sh"}`,
+			`https://raw.githubusercontent.com/Eduardob3677/dotfiles-win/${import.meta.env.DEFAULT_BRANCH}${path}/install.${path === "/win" ? "ps1" : "sh"}`,
 		);
 	});
 
@@ -143,7 +143,7 @@ describe("installer script must contain the source URL", () => {
 		const sourceUrl = [...script.matchAll(/# source: (?<url>.+)/g)].at(0)
 			?.groups?.["url"];
 		expect(sourceUrl).toBe(
-			`https://raw.githubusercontent.com/risu729/dotfiles/${import.meta.env.LATEST_COMMIT_HASH}${path}/install.${
+			`https://raw.githubusercontent.com/Eduardob3677/dotfiles-win/${import.meta.env.LATEST_COMMIT_HASH}${path}/install.${
 				path === "/win" ? "ps1" : "sh"
 			}`,
 		);

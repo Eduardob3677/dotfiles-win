@@ -33,7 +33,7 @@ export default defineConfig((configEnv) =>
 
 					LATEST_COMMIT_HASH: latestCommitHash,
 					// fix constants in tests
-					REPO_NAME: "risu729/dotfiles",
+					REPO_NAME: "Eduardob3677/dotfiles-win",
 					// biome-ignore-end lint/style/useNamingConvention: env var
 				},
 				poolOptions: {
