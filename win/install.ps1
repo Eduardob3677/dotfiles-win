@@ -16,11 +16,11 @@ function Test-MinimumWindowsVersion {
 	[CmdletBinding()]
 	param(
 		[Parameter(Mandatory = $true)]
-		# The minimum required Windows build number (e.g., 26100).
+		# The minimum required Windows build number (e.g., 26200).
 		[int]$MinimumBuild,
 
 		[Parameter(Mandatory = $true)]
-		# The required Windows DisplayVersion string in NNHN format (e.g., "24H2").
+		# The required Windows DisplayVersion string in NNHN format (e.g., "25H2").
 		[string]$RequiredDisplayVersionString
 	)
 
@@ -550,7 +550,7 @@ $gitRef = ''
 $wslDistribution = 'Ubuntu'
 $wslUsername = $env:USERNAME
 
-Test-MinimumWindowsVersion -MinimumBuild 26100 -RequiredDisplayVersionString '24H2'
+Test-MinimumWindowsVersion -MinimumBuild 26200 -RequiredDisplayVersionString '25H2'
 
 Invoke-ElevatedScript -ScriptOrigin $scriptOrigin -GitRef $gitRef
 
